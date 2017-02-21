@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 4.3.0
-Release  : 2
+Release  : 3
 URL      : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
 Source0  : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
 Summary  : The Jupyter Notebook format
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : BSD-3-Clause-Clear
 Requires: nbformat-bin
 Requires: nbformat-python
+BuildRequires : jsonschema
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
@@ -44,12 +45,12 @@ python components for the nbformat package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487700692
+export SOURCE_DATE_EPOCH=1487700821
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487700692
+export SOURCE_DATE_EPOCH=1487700821
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
