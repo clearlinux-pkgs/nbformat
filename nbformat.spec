@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 4.3.0
-Release  : 3
+Release  : 4
 URL      : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
 Source0  : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
 Summary  : The Jupyter Notebook format
