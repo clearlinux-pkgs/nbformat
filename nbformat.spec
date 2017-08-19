@@ -4,14 +4,17 @@
 #
 Name     : nbformat
 Version  : 4.3.0
-Release  : 4
-URL      : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
-Source0  : https://pypi.python.org/packages/f9/c5/89df4abf906f766727f976e170caa85b4f1c1d1feb1f45d716016e68e19f/nbformat-4.3.0.tar.gz
+Release  : 5
+URL      : http://pypi.debian.net/nbformat/nbformat-4.3.0.tar.gz
+Source0  : http://pypi.debian.net/nbformat/nbformat-4.3.0.tar.gz
 Summary  : The Jupyter Notebook format
 Group    : Development/Tools
 License  : BSD-3-Clause-Clear
 Requires: nbformat-bin
 Requires: nbformat-python
+Requires: ipython_genutils
+Requires: jsonschema
+Requires: traitlets
 BuildRequires : jsonschema
 BuildRequires : pbr
 BuildRequires : pip
@@ -20,9 +23,8 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-# The Jupyter Notebook Format
-[![codecov.io](https://codecov.io/github/jupyter/nbformat/coverage.svg?branch=master)](https://codecov.io/github/jupyter/nbformat?branch=master)
-[![Code Health](https://landscape.io/github/jupyter/nbformat/master/landscape.svg?style=flat)](https://landscape.io/github/jupyter/nbformat/master)
+This package contains the base implementation of the Jupyter Notebook format,
+            and Python APIs for working with notebooks.
 
 %package bin
 Summary: bin components for the nbformat package.
@@ -44,16 +46,22 @@ python components for the nbformat package.
 %setup -q -n nbformat-4.3.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1487700821
+export SOURCE_DATE_EPOCH=1503122146
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487700821
+export SOURCE_DATE_EPOCH=1503122146
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -64,4 +72,5 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
