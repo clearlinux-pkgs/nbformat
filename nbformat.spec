@@ -4,13 +4,14 @@
 #
 Name     : nbformat
 Version  : 4.4.0
-Release  : 6
+Release  : 7
 URL      : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Source0  : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Summary  : The Jupyter Notebook format
 Group    : Development/Tools
 License  : BSD-3-Clause-Clear
 Requires: nbformat-bin
+Requires: nbformat-legacypython
 Requires: nbformat-python
 Requires: ipython_genutils
 Requires: jsonschema
@@ -34,9 +35,18 @@ Group: Binaries
 bin components for the nbformat package.
 
 
+%package legacypython
+Summary: legacypython components for the nbformat package.
+Group: Default
+
+%description legacypython
+legacypython components for the nbformat package.
+
+
 %package python
 Summary: python components for the nbformat package.
 Group: Default
+Requires: nbformat-legacypython
 
 %description python
 python components for the nbformat package.
@@ -50,12 +60,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503282716
+export SOURCE_DATE_EPOCH=1505006465
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503282716
+export SOURCE_DATE_EPOCH=1505006465
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -70,7 +80,10 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/bin/jupyter-trust
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
