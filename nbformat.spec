@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 4.4.0
-Release  : 8
+Release  : 9
 URL      : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Source0  : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Summary  : The Jupyter Notebook format
@@ -50,7 +50,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505097193
+export SOURCE_DATE_EPOCH=1505365043
 python3 setup.py build -b py3
 
 %install
