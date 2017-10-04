@@ -4,13 +4,14 @@
 #
 Name     : nbformat
 Version  : 4.4.0
-Release  : 9
+Release  : 10
 URL      : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Source0  : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Summary  : The Jupyter Notebook format
 Group    : Development/Tools
 License  : BSD-3-Clause-Clear
 Requires: nbformat-bin
+Requires: nbformat-python3
 Requires: nbformat-python
 Requires: ipython_genutils
 Requires: jsonschema
@@ -37,9 +38,19 @@ bin components for the nbformat package.
 %package python
 Summary: python components for the nbformat package.
 Group: Default
+Requires: nbformat-python3
 
 %description python
 python components for the nbformat package.
+
+
+%package python3
+Summary: python3 components for the nbformat package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the nbformat package.
 
 
 %prep
@@ -50,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505365043
+export SOURCE_DATE_EPOCH=1507160374
 python3 setup.py build -b py3
 
 %install
@@ -68,5 +79,8 @@ echo ----[ mark ]----
 /usr/bin/jupyter-trust
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
