@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 4.4.0
-Release  : 14
+Release  : 15
 URL      : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Source0  : http://pypi.debian.net/nbformat/nbformat-4.4.0.tar.gz
 Summary  : The Jupyter Notebook format
