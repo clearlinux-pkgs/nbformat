@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 5.0.4
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/c8/5f/92d74702213f0a2d85b2c91158ce1f96fbc003b8c515a8ec5cb39043e7c9/nbformat-5.0.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c8/5f/92d74702213f0a2d85b2c91158ce1f96fbc003b8c515a8ec5cb39043e7c9/nbformat-5.0.4.tar.gz
 Summary  : The Jupyter Notebook format
@@ -22,8 +22,9 @@ BuildRequires : jsonschema
 BuildRequires : traitlets
 
 %description
-This package contains the base implementation of the Jupyter Notebook format,
-            and Python APIs for working with notebooks.
+# The Jupyter Notebook Format
+[![codecov.io](https://codecov.io/github/jupyter/nbformat/coverage.svg?branch=master)](https://codecov.io/github/jupyter/nbformat?branch=master)
+[![Code Health](https://landscape.io/github/jupyter/nbformat/master/landscape.svg?style=flat)](https://landscape.io/github/jupyter/nbformat/master)
 
 %package license
 Summary: license components for the nbformat package.
@@ -46,6 +47,7 @@ python components for the nbformat package.
 Summary: python3 components for the nbformat package.
 Group: Default
 Requires: python3-core
+Provides: pypi(nbformat)
 
 %description python3
 python3 components for the nbformat package.
@@ -60,7 +62,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580152667
+export SOURCE_DATE_EPOCH=1583185595
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
