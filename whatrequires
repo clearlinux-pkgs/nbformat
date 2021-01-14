@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+jupyter_server
 nbconvert
 nbval
 notebook
