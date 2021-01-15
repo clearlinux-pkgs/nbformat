@@ -1,5 +1,5 @@
 PKG_NAME := nbformat
-URL = https://files.pythonhosted.org/packages/a6/5a/af71b07b99eb2f6860add24206aad5e2e2afba2ab6a21682b725d6fbc413/nbformat-5.1.1.tar.gz
+URL = https://files.pythonhosted.org/packages/4e/4d/36023eaabe8ec48635178558015d14572835c24adbf7c3cd1107b748317b/nbformat-5.1.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
