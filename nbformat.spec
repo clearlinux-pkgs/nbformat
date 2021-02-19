@@ -4,7 +4,7 @@
 #
 Name     : nbformat
 Version  : 5.1.2
-Release  : 40
+Release  : 41
 URL      : https://files.pythonhosted.org/packages/4e/4d/36023eaabe8ec48635178558015d14572835c24adbf7c3cd1107b748317b/nbformat-5.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4e/4d/36023eaabe8ec48635178558015d14572835c24adbf7c3cd1107b748317b/nbformat-5.1.2.tar.gz
 Summary  : The Jupyter Notebook format
